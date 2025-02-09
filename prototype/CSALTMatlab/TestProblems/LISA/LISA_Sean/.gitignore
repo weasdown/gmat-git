@@ -1,0 +1,4 @@
+*.txt
+
+# Too large for GitHub file size limit (114MB vs 100MB)
+de430.bsp

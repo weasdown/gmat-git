@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<refentry version="5.0" xml:id="ForceModel"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:xi="http://www.w3.org/2001/XInclude"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:m="http://www.w3.org/1998/Math/MathML"
+          xmlns:html="http://www.w3.org/1999/xhtml"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refmeta>
+    <refentrytitle>ForceModel</refentrytitle>
+    <refmiscinfo class="source">GMAT</refmiscinfo>
+    <refmiscinfo class="manual">Resources</refmiscinfo>
+  </refmeta>
+
+  <refnamediv>
+    <refname>ForceModel</refname>
+
+    <refpurpose>Used to specify force modeling options such as gravity, drag, solar radiation pressure, and non-central bodies for propagation.</refpurpose>
+  </refnamediv>
+
+  <refsection>
+    <title>Description</title>
+
+    <para>For details on the ForceModel resource, see <xref linkend="Propagator_ForceModel"/> in the Propagator resource.</para>
+  </refsection>
+
+</refentry>
