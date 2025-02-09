@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<refentry version="5.0" xml:id="Transmitter"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:xi="http://www.w3.org/2001/XInclude"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:m="http://www.w3.org/1998/Math/MathML"
+          xmlns:html="http://www.w3.org/1999/xhtml"
+          xmlns:db="http://docbook.org/ns/docbook">
+  <indexterm>
+    <primary>Transmitter</primary>
+  </indexterm>
+
+  <refmeta>
+    <refentrytitle>Transmitter</refentrytitle>
+
+    <refmiscinfo class="source">GMAT</refmiscinfo>
+
+    <refmiscinfo class="manual">Resources</refmiscinfo>
+  </refmeta>
+
+  <refnamediv>
+    <refname>Transmitter</refname>
+
+    <refpurpose>Defines the electronics hardware, attached to a
+    <guilabel>GroundStation</guilabel> or <guilabel>Spacecraft</guilabel>
+    resource, that transmits an RF signal.</refpurpose>
+  </refnamediv>
+
+  <refsection>
+    <title>Description</title>
+
+    <para>A ground station needs a <guilabel>Transmitter</guilabel> to
+    transmit the RF signal to both user spacecraft and to navigation
+    spacecraft such as TDRS. A <guilabel>Transmitter</guilabel> is assigned on
+    the <guilabel>AddHardware</guilabel> list of an instance of a
+    <guilabel>GroundStation</guilabel>. A <guilabel>Transmitter</guilabel> may
+    also be assigned on a TDRS user spacecraft to specify the user-to-TDRS
+    transmit frequency.</para>
+
+    <para>See Also <xref linkend="GroundStation"/>, <xref
+    linkend="Antenna"/></para>
+  </refsection>
+
+  <refsection>
+    <title>Fields</title>
+
+    <informaltable colsep="0" frame="topbot">
+      <tgroup cols="2">
+        <colspec colnum="1" colwidth="1.0*"/>
+
+        <colspec colnum="2" colwidth="3*"/>
+
+        <thead>
+          <row>
+            <entry>Field</entry>
+
+            <entry>Description</entry>
+          </row>
+        </thead>
+
+        <tbody>
+          <row>
+            <entry><guilabel>Frequency</guilabel></entry>
+
+            <entry><para>Transmit frequency</para> <variablelist>
+                <varlistentry>
+                  <term>Data Type</term>
+
+                  <listitem>
+                    <para>Real</para>
+                  </listitem>
+                </varlistentry>
+
+                <varlistentry>
+                  <term>Allowed Values</term>
+
+                  <listitem>
+                    <para>Real &gt;= 0</para>
+                  </listitem>
+                </varlistentry>
+
+                <varlistentry>
+                  <term>Access</term>
+
+                  <listitem>
+                    <para>set</para>
+                  </listitem>
+                </varlistentry>
+
+                <varlistentry>
+                  <term>Default Value</term>
+
+                  <listitem>
+                    <para>
+                      <guilabel>0</guilabel>
+                    </para>
+                  </listitem>
+                </varlistentry>
+
+                <varlistentry>
+                  <term>Units</term>
+
+                  <listitem>
+                    <para>MHz</para>
+                  </listitem>
+                </varlistentry>
+
+                <varlistentry>
+                  <term>Interfaces</term>
+
+                  <listitem>
+                    <para>script</para>
+                  </listitem>
+                </varlistentry>
+              </variablelist></entry>
+          </row>
+
+          <row>
+            <entry><guilabel>FrequencyBand</guilabel></entry>
+
+            <entry><para>Transmit frequency band. This parameter is only used
+            for measurement simulation. The frequency band for estimation
+            (when applicable) is specified in the GMD tracking data
+            file.</para><para>This parameter is ignored when simulating DSN
+            data types. For simulation of DSN data, the frequency band is
+            inferred from the <guilabel>Frequency</guilabel> parameter
+            according to DSN specifications for frequency ranges. If set to
+            <guilabel>None</guilabel>, GMAT will attempt to infer the
+            frequency band based on the Transmitter
+            <guilabel>Frequency</guilabel>.</para><variablelist>
+                <varlistentry>
+                  <term>Data Type</term>
+
+                  <listitem>
+                    <para>String</para>
+                  </listitem>
+                </varlistentry>
+
+                <varlistentry>
+                  <term>Allowed Values</term>
+
+                  <listitem>
+                    <para>'None', 'C', 'S', 'X', 'K'</para>
+                  </listitem>
+                </varlistentry>
+
+                <varlistentry>
+                  <term>Access</term>
+
+                  <listitem>
+                    <para>set</para>
+                  </listitem>
+                </varlistentry>
+
+                <varlistentry>
+                  <term>Default Value</term>
+
+                  <listitem>
+                    <para><guilabel>None</guilabel></para>
+                  </listitem>
+                </varlistentry>
+
+                <varlistentry>
+                  <term>Units</term>
+
+                  <listitem>
+                    <para>NA</para>
+                  </listitem>
+                </varlistentry>
+
+                <varlistentry>
+                  <term>Interfaces</term>
+
+                  <listitem>
+                    <para>script</para>
+                  </listitem>
+                </varlistentry>
+              </variablelist></entry>
+          </row>
+
+          <row>
+            <entry><guilabel>PrimaryAntenna</guilabel></entry>
+
+            <entry><para><guilabel>Antenna</guilabel> resource used by
+            <guilabel>GroundStation</guilabel> resource to transmit a
+            signal</para> <variablelist>
+                <varlistentry>
+                  <term>Data Type</term>
+
+                  <listitem>
+                    <para><guilabel>Antenna</guilabel> Object</para>
+                  </listitem>
+                </varlistentry>
+
+                <varlistentry>
+                  <term>Allowed Values</term>
+
+                  <listitem>
+                    <para>Any <guilabel>Antenna</guilabel> object</para>
+                  </listitem>
+                </varlistentry>
+
+                <varlistentry>
+                  <term>Access</term>
+
+                  <listitem>
+                    <para>set</para>
+                  </listitem>
+                </varlistentry>
+
+                <varlistentry>
+                  <term>Default Value</term>
+
+                  <listitem>
+                    <para>
+                      <guilabel>None</guilabel>
+                    </para>
+                  </listitem>
+                </varlistentry>
+
+                <varlistentry>
+                  <term>Units</term>
+
+                  <listitem>
+                    <para>N/A</para>
+                  </listitem>
+                </varlistentry>
+
+                <varlistentry>
+                  <term>Interfaces</term>
+
+                  <listitem>
+                    <para>script</para>
+                  </listitem>
+                </varlistentry>
+              </variablelist></entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </informaltable>
+  </refsection>
+
+  <refsection>
+    <title>Remarks</title>
+
+    <refsection>
+      <title>Discussion of how Transmitter frequency is used</title>
+
+      <para>A transmitter may be attached to a
+      <guilabel>GroundStation</guilabel> or Spacecraft resource. As discussed
+      in the <guilabel>RunSimulator</guilabel> Help, for the case where a ramp
+      table is not used, the transmit frequency is used directly to calculate
+      the DSN range and Doppler measurements. If a ramp table is specified on
+      the relevant <guilabel>TrackingFileSet</guilabel>, the frequency profile
+      specified in the ramp table is used and the Transmitter
+      <guilabel>Frequency</guilabel> and <guilabel>FrequencyBand</guilabel>
+      are ignored.</para>
+
+      <para>For simulation of TDRS measurements, a Transmitter may be attached
+      to the TDRS user spacecraft to specify the user-to-TDRS transmit
+      frequency for measurement simulation. If no Transmitter is attached to
+      the TDRS user, a default frequency of 2000 MHz is used. When estimating,
+      the user-to-TDRS transmit frequency is obtained from the GMD tracking
+      data file, and the Transmitter <guilabel>Frequency</guilabel> and
+      <guilabel>FrequencyBand</guilabel> are ignored.</para>
+    </refsection>
+  </refsection>
+
+  <refsection>
+    <title>Examples</title>
+
+    <informalexample>
+      <para>Create and configure a <guilabel>Transmitter</guilabel>
+      object</para>
+
+      <programlisting>Create Antenna DSNAntenna;
+Create Transmitter Transmitter1;
+
+Transmitter1.PrimaryAntenna = DSNAntenna;
+Transmitter1.Frequency = 7186.3; 
+
+Create GroundStation DSN
+DSN.AddHardware = {Transmitter1};
+
+BeginMissionSequence;</programlisting>
+    </informalexample>
+  </refsection>
+</refentry>
