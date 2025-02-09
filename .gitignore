@@ -69,3 +69,5 @@ __pycache__
 /application/output/EKFS_EphemerisFile_STK_PredDv_Filter.e
 /application/output/EKFS_EphemerisFile_STK_PredDv.csv
 /application/data/navdata/thrusthistory/PredDv_Large.thrust
+
+prototype/CSALTMatlab/TestProblems/LISA/LISA_Sean/de430.bsp  # Too large for GitHub file size limit (114MB vs 100MB)
